@@ -33,7 +33,7 @@ var ErroSaldoInsuficiente = errors.New("não é possível retirar: saldo insufic
 
 func (c *Carteira) Retirar(quantidade Bitcoin) error {
 	if quantidade > c.saldo {
-		return errors.New("eita")
+		return ErroSaldoInsuficiente
 	}
 
 	c.saldo -= quantidade
